@@ -1,24 +1,43 @@
 {
 	"[dockercompose]": {
+		"editor.autoIndent": "advanced",
 		"editor.defaultFormatter": "ms-azuretools.vscode-docker",
+		"editor.insertSpaces": true,
+		"editor.quickSuggestions": {
+			"comments": false,
+			"other": true,
+			"strings": true
+		},
 		"editor.tabSize": 1
 	},
 	"[dockerfile]": {
-		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+		"editor.defaultFormatter": "ms-azuretools.vscode-docker",
+		"editor.quickSuggestions": {
+			"strings": true
+		},
+		"editor.tabSize": 1
 	},
 	"[javascript]": {
 		"editor.defaultFormatter": "vscode.typescript-language-features"
 	},
 	"[json]": {
 		"editor.defaultFormatter": "vscode.json-language-features",
-		"editor.tabSize": 2
+		"editor.quickSuggestions": {
+			"strings": true
+		},
+		"editor.suggest.insertMode": "replace"
 	},
-	"[jsonc]": {
-		"editor.defaultFormatter": "vscode.json-language-features",
-		"editor.tabSize": 2
+	"[typescript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
 	},
-	"[vue]": {
-		"editor.defaultFormatter": "Vue.volar"
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[yaml]": {
+		"diffEditor.ignoreTrimWhitespace": false,
+		"editor.autoIndent": "advanced",
+		"editor.insertSpaces": true,
+		"editor.tabSize": 1
 	},
 	"editor.tabSize": 3
 }

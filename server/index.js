@@ -1,21 +1,20 @@
 import cors from 'cors';
 import express from "express";
+import helmet from 'helmet';
+
+import apiRouter from './apiRouter.js';
 
 const app = express()
 
+app.use(helmet())
 app.use(cors({
-	allowedHeaders: ['Content-Type'],
-	credentials: true,
-	methods: ['GET', 'POST', 'PATCH', 'DELETE'],
-	origin: 'http://localhost:5174'
+   allowedHeaders: ['Content-Type'],
+   credentials: true,
+   methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+   origin: process.env.CORS_ORIGIN
 }))
 app.use(express.json())
 
-const indexRouter = express.Router({ caseSensitive: true, strict: true })
-indexRouter.get('/', (req, res) => {
-	res.json({ message: 'Hello, world!' })
-})
-
-app.use('/api', indexRouter)
+app.use('/api', apiRouter)
 
 export default app

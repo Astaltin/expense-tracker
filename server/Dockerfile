@@ -1,6 +1,6 @@
 FROM node:20.17.0-alpine
 
-RUN npm i -g pnpm 
+RUN npm i -g pnpm
 
 WORKDIR /usr/src/app
 
@@ -10,4 +10,4 @@ RUN pnpm install
 
 COPY . .
 
-EXPOSE $PORT 
+EXPOSE $SERVER_PORT

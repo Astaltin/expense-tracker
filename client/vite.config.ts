@@ -1,22 +1,18 @@
-import vue from '@vitejs/plugin-vue'
-import autoprefixer from 'autoprefixer'
-import tailwind from 'tailwindcss'
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
 import path from 'node:path'
 
 export default defineConfig({
-  css: {
-    postcss: {
-      plugins: [tailwind(), autoprefixer()]
+  envDir: '../.env',
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, './src')
     }
   },
-  plugins: [vue()],
   server: {
     host: true,
-    port: process.env.PORT,
+    port: process.env.CLIENT_PORT,
     watch: { usePolling: true }
   },
-  resolve: {
-    alias: { '@': path.resolve(__dirname, './src') }
-  }
 })

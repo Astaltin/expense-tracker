@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DB_URL")
+}
+
+model Expenses {
+  id          String    @id @default(cuid()) @db.Char(32)
+  description String    @db.Char(255)
+  category    Category
+  amount      Float     @db.Float
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @default(now()) @updatedAt @map("updated_at")
+  deletedAt   DateTime? @map("deleted_at")
+
+  @@map("expenses")
+}
+
+enum Category {
+  Clothing
+  Education
+  Food
+  Others
+  Transportation
+}
